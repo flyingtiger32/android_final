@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1063185995058",
+    "project_id": "pre-examen-676c9",
+    "storage_bucket": "pre-examen-676c9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063185995058:android:c708c16ed9afcfe66b732b",
+        "android_client_info": {
+          "package_name": "ad.cfp.androidpobprofinal2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNJUTboT-Tgj14QobovNAy_ofIZzj-xjI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
