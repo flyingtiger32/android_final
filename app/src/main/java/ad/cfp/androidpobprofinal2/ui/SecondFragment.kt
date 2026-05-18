@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ad.cfp.androidpobprofinal2.R
-import ad.cfp.androidpobprofinal2.adapter.ActionsRvAdapter
 import ad.cfp.androidpobprofinal2.adapter.CatalegAdapter
 import ad.cfp.androidpobprofinal2.data.Cataleg
 import ad.cfp.androidpobprofinal2.databinding.FragmentSecondBinding

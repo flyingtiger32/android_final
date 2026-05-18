@@ -31,7 +31,6 @@ class ThirdFragment : Fragment() {
         return binding.root
     }
     //
-
     //
 
     override fun onDestroyView() {

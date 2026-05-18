@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ad.cfp.androidpobprofinal2.R
-import ad.cfp.androidpobprofinal2.adapter.ActionsRvAdapter
 import ad.cfp.androidpobprofinal2.adapter.CatalegAdapter
 import ad.cfp.androidpobprofinal2.data.Cataleg
 import ad.cfp.androidpobprofinal2.databinding.FragmentFirstBinding
@@ -19,11 +18,11 @@ import com.google.firebase.crashlytics.crashlytics
 import com.google.firebase.firestore.firestore
 import com.google.firebase.firestore.toObject
 
-class FirstFragment : Fragment(), ActionsRvAdapter {
+class FirstFragment : Fragment() {
     var _binding: FragmentFirstBinding?=null
     val binding get() = _binding!!
     val llista = mutableListOf<Cataleg>()
-    val catalegAdapter= CatalegAdapter(llista, this)
+    val catalegAdapter= CatalegAdapter(llista)
     val db= Firebase.firestore
     val crash=Firebase.crashlytics
     override fun onCreateView(
@@ -79,23 +78,5 @@ class FirstFragment : Fragment(), ActionsRvAdapter {
         }
     }
 
-    override fun fav(position: Int, item: Cataleg) {
-        loading(true)
-        val idx = llista.indexOfFirst { element-> element.id==item.id }
-        item.favorite=!item.favorite
-        llista[idx]=item
-        db.collection(CONSTANTS.CATALEG).document(item.id).set(item)
-            .addOnSuccessListener {catalegAdapter.notifyItemChanged(position)}
-            .addOnFailureListener { e->
-                Log.e("firebase", e.toString())
-                crash.recordException(e)
-            }
-            .addOnCompleteListener { loading(false) }
-    }
 
-    override fun edit(item: Cataleg) {
-        val activity=requireActivity() as MainActivity
-        activity.item=item
-        activity.binding.viewpager2.currentItem=2
-    }
 }
